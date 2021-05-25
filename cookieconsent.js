@@ -3,10 +3,8 @@
 <head>
 <base href="/system/">
 <title>DashNet | 404!</title>
-<!--
-Code and graphics copyright Orteil, 2017
-Feel free to alter this code to your liking, but please do not re-host it, do not profit from it and do not present it as your own.
--->
+<!--- Code and graphics copyright Orteil, 2017 --->
+<!--- Feel free to alter this code to your liking, but please do not re-host it, do not profit from it and do not present it as your own. --->
 
 <link rel="shortcut icon" href="img/favicon.ico" />
 <link href="lib/style.css?v=2" rel="stylesheet" type="text/css">
