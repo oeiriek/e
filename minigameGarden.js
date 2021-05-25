@@ -8,6 +8,7 @@ M.launch=function()
 	M.init=function(div)
 	{
 		//populate div with html and initialize values
+		
 		/*
 			plants age from 0 to 100
 			at one point in its lifespan, the plant becomes mature

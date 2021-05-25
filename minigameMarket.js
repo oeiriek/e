@@ -1,4 +1,3 @@
-// code for the stock market minigame.
 var M={};
 M.parent=Game.Objects['Bank'];
 M.parent.minigame=M;
