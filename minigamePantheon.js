@@ -7,8 +7,7 @@ M.launch=function()
 	M.name=M.parent.minigameName;
 	M.init=function(div)
 	{
-		//populate div with html and initialize values
-				
+		//populate div with html and initialize values	
 		M.gods={
 			'asceticism':{
 				name:'Holobore, Spirit of Asceticism',
