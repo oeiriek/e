@@ -6143,7 +6143,7 @@ Game.Launch=function()
 			
 			if (Game.TickerN%2==0 || Game.cookiesEarned>=10100000000)
 			{
-				var animals=['newts','penguins','scorpions','axolotls','puffins','porpoises','blowfish','horses','crayfish','slugs','humpback whales','nurse sharks','giant squids','polar bears','fruit bats','frogs','sea squirts','velvet worms','mole rats','paramecia','nematodes','tardigrades','giraffes','monkfish','wolfmen','goblins','hippies'];
+				var animals=['newts','penguins','pandas','scorpions','axolotls','puffins','porpoises','blowfish','horses','crayfish','slugs','humpback whales','nurse sharks','giant squids','polar bears','fruit bats','frogs','sea squirts','velvet worms','mole rats','paramecia','nematodes','tardigrades','giraffes','monkfish','wolfmen','goblins','hippies'];
 				
 				if (Math.random()<0.75 || Game.cookiesEarned<10000)
 				{
@@ -6154,6 +6154,7 @@ Game.Launch=function()
 					'<q>Come give grandma a kiss.</q><sig>grandma</sig>',
 					'<q>Why don\'t you visit more often?</q><sig>grandma</sig>',
 					'<q>Call me...</q><sig>grandma</sig>'
+					'<p>Please feed me</p><sig>grandma</sig>
 					]));
 					
 					if (Game.Objects['Grandma'].amount>=50) list.push(choose([
@@ -6172,6 +6173,7 @@ Game.Launch=function()
 					'<q>It tried to get rid of us, the nasty little thing.</q><sig>grandma</sig>',
 					'<q>It thought we would go away by selling us. How quaint.</q><sig>grandma</sig>',
 					'<q>I can smell your rotten cookies.</q><sig>grandma</sig>'
+					'<p>Is this slavery?</p><sig>grandma</sig>'
 					]));
 					
 					if (Game.Objects['Grandma'].amount>=1 && Game.pledges>0 && Game.elderWrath==0) list.push(choose([
@@ -6405,7 +6407,7 @@ Game.Launch=function()
 				
 				if (Game.cookiesEarned>=10000) list.push(
 				'News : '+choose([
-					'cookies found to '+choose(['increase lifespan','sensibly increase intelligence','reverse aging','decrease hair loss','prevent arthritis','cure blindness'])+' in '+choose(animals)+'!',
+					'cookies found to '+choose(['increase lifespan','sensibly increase intelligence','reverse aging','decrease hair loss','prevent arthritis','cure blindness','DIE!!!!!'])+' in '+choose(animals)+'!',
 					'cookies found to make '+choose(animals)+' '+choose(['more docile','more handsome','nicer','less hungry','more pragmatic','tastier'])+'!',
 					'cookies tested on '+choose(animals)+', found to have no ill effects.',
 					'cookies unexpectedly popular among '+choose(animals)+'!',
@@ -6442,18 +6444,15 @@ Game.Launch=function()
 					'News : overgrown cookies found in fishing nets, raise questions about hormone baking.',
 					'News : "all-you-can-eat" cookie restaurant opens in big city; waiters trampled in minutes.',
 					'News : man dies in cookie-eating contest; "a less-than-impressive performance", says judge.',
-					'News : Davis Furr is stupid, research shows.',
 					'News : what makes cookies taste so right? "Probably all the [*****] they put in them", says anonymous tipper.',
 					'News : man found allergic to cookies; "what a weirdo", says family.',
-					'News : LOL NEWS BR0KEN. ',
-					'News : Chase is awesome.',
 					'News : foreign politician involved in cookie-smuggling scandal.',
 					'News : cookies now more popular than '+choose(['cough drops','broccoli','smoked herring','cheese','video games','stable jobs','relationships','time travel','cat videos','tango','fashion','television','nuclear warfare','whatever it is we ate before','politics','oxygen','lamps'])+', says study.',
 					'News : obesity epidemic strikes nation; experts blame '+choose(['twerking','that darn rap music','video-games','lack of cookies','mysterious ghostly entities','aliens','parents','schools','comic-books','cookie-snorting fad'])+'.',
 					'News : cookie shortage strikes town, people forced to eat cupcakes; "just not the same", concedes mayor.',
 					'News : "you gotta admit, all this cookie stuff is a bit ominous", says confused idiot.',
-					//'News : scientists advise getting used to cookies suffusing every aspect of life; "this is the new normal", expert says.',
-					//'News : doctors advise against wearing face masks when going outside. "You never know when you might need a cookie... a mask would just get in the way."',//these were written back when covid hadn't really done much damage yet but they just feel in poor taste now
+					'News : scientists advise getting used to cookies suffusing every aspect of life; "this is the new normal", expert says.',
+					'News : doctors advise against wearing face masks when going outside. "You never know when you might need a cookie... a mask would just get in the way."',//these were written back when covid hadn't really done much damage yet but they just feel in poor taste now
 					'News : is there life on Mars? Various chocolate bar manufacturers currently under investigation for bacterial contaminants.',
 					'News : "so I guess that\'s a thing now", scientist comments on cookie particles now present in virtually all steel manufactured since cookie production ramped up worldwide.',
 					'News : trace amounts of cookie particles detected in most living creatures, some of which adapting them as part of new and exotic metabolic processes.',
@@ -6503,22 +6502,29 @@ Game.Launch=function()
 					'News : pet '+choose(animals)+', dangerous fad or juicy new market?',
 					'News : person typing these wouldn\'t mind someone else breaking the news to THEM, for a change.',
 					'News : "average person bakes '+Beautify(Math.ceil(Game.cookiesEarned/7300000000))+' cookie'+(Math.ceil(Game.cookiesEarned/7300000000)==1?'':'s')+' a year" factoid actually just statistical error; '+Game.bakeryName+', who has produced '+Beautify(Game.cookiesEarned)+' cookies in their lifetime, is an outlier and should not have been counted.'
+				]),
+				choose({
+					'News : '+Game.bakeryName+' is popular',
+					'News : Davis Furr bad',
+					'News : Visit me on my website at 3kh0.github.io',
+					'News : Are you having fun with this game?',
+					'News : Hi! -3kh0',
 					])
 				);
 			}
 			
 			if (list.length==0)
 			{
-				if (Game.cookiesEarned<5) list.push('You feel like making cookies. But nobody wants to eat your cookies.');
+				if (Game.cookiesEarned<5) list.push('You feel like making cookies. But nobody wants to eat your cookies. Sad');
 				else if (Game.cookiesEarned<50) list.push('Your first batch goes to the trash. The neighborhood raccoon barely touches it.');
 				else if (Game.cookiesEarned<100) list.push('Your family accepts to try some of your cookies.');
 				else if (Game.cookiesEarned<500) list.push('Your cookies are popular in the neighborhood.');
 				else if (Game.cookiesEarned<1000) list.push('People are starting to talk about your cookies.');
 				else if (Game.cookiesEarned<5000) list.push('Your cookies are talked about for miles around.');
 				else if (Game.cookiesEarned<10000) list.push('Your cookies are renowned in the whole town!');
-				else if (Game.cookiesEarned<50000) list.push('Your cookies bring all the boys to the yard.');
-				else if (Game.cookiesEarned<100000) list.push('Your cookies now have their own website!');
-				else if (Game.cookiesEarned<500000) list.push('Your cookies are worth a lot of money.');
+				else if (Game.cookiesEarned<50000) list.push('Your cookies bring all the boys to the yard. Me and the boyzz!');
+				else if (Game.cookiesEarned<100000) list.push('Your cookies now have their own website! Did you use wix?');
+				else if (Game.cookiesEarned<500000) list.push('Your cookies are worth a lot of money. Almost like gold');
 				else if (Game.cookiesEarned<1000000) list.push('Your cookies sell very well in distant countries.');
 				else if (Game.cookiesEarned<5000000) list.push('People come from very far away to get a taste of your cookies.');
 				else if (Game.cookiesEarned<10000000) list.push('Kings and queens from all over the world are enjoying your cookies.');
@@ -6535,7 +6541,7 @@ Game.Launch=function()
 				else if (Game.cookiesEarned<5000000000000) list.push('The universe has now turned into cookie dough, to the molecular level.');
 				else if (Game.cookiesEarned<10000000000000) list.push('Your cookies are rewriting the fundamental laws of the universe.');
 				else if (Game.cookiesEarned<10000000000000) list.push('A local news station runs a 10-minute segment about your cookies. Success!<br><span style="font-size:50%;">(you win a cookie)</span>');
-				else if (Game.cookiesEarned<10100000000000) list.push('it\'s time to stop playing');//only show this for 100 millions (it's funny for a moment)
+				else if (Game.cookiesEarned<10100000000000) list.push('it\'s time to stop playing. Please dont stop actully.');//only show this for 100 millions (it's funny for a moment)
 			}
 			
 			//if (Game.elderWrath>0 && (Game.pledges==0 || Math.random()<0.2))
@@ -6589,16 +6595,19 @@ Game.Launch=function()
 					if (Game.Objects['Grandma'].amount>0) list.push(choose([
 					'Your rolling pins are rolling and pinning!',
 					'Production is steady!'
+					'Everything is working properly!'
 					]));
 					
 					if (Game.Objects['Grandma'].amount>0) list.push(choose([
 					'Your ovens are diligently baking more and more cookies.',
 					'Your ovens burn a whole batch. Ah well! Still good.'
+					'One of your ovens are broken! Get the repair man!'
 					]));
 					
 					if (Game.Objects['Farm'].amount>0) list.push(choose([
 					'Scores of cookies come out of your kitchens.',
 					'Today, new recruits are joining your kitchens!'
+					'Your kitchens are up and running!'
 					]));
 					
 					if (Game.Objects['Factory'].amount>0) list.push(choose([
@@ -6610,21 +6619,25 @@ Game.Launch=function()
 					if (Game.Objects['Mine'].amount>0) list.push(choose([
 					'Your secret recipes are kept safely inside a giant underground vault.',
 					'Your chefs are working on new secret recipes!'
+					'Your chefs are working hard!'
 					]));
 					
 					if (Game.Objects['Shipment'].amount>0) list.push(choose([
 					'Your supermarkets are bustling with happy, hungry customers.',
 					'Your supermarkets are full of cookie merch!'
+					'People are swarming the stores for your cookies!'
 					]));
 					
 					if (Game.Objects['Alchemy lab'].amount>0) list.push(choose([
 					'It\'s a new trading day at the stock exchange, and traders can\'t get enough of your shares!',
 					'Your stock is doubling in value by the minute!'
+					'Your stock is going throught the roof!'
 					]));
 					
 					if (Game.Objects['Portal'].amount>0) list.push(choose([
 					'You just released a new TV show episode!',
 					'Your cookie-themed TV show is being adapted into a new movie!'
+					'TV ratings for your show are amazing!'
 					]));
 					
 					if (Game.Objects['Time machine'].amount>0) list.push(choose([
@@ -6635,6 +6648,7 @@ Game.Launch=function()
 					if (Game.Objects['Antimatter condenser'].amount>0) list.push(choose([
 					'Cookiecoin is officially the most mined digital currency in the history of mankind!',
 					'Cookiecoin piracy is rampant!'
+					'Bitcoin is no more!'
 					]));
 					
 					if (Game.Objects['Prism'].amount>0) list.push(choose([
